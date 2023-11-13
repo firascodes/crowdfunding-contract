@@ -12,6 +12,12 @@ module.exports = {
     },
   },
   networks: {
+    hardhat: {},
+    goerli: {
+      url: "https://rpc.ankr.com/eth_goerli",
+      account:
+        "507bdf13ce97f2d23bc1c5110ef8b0a925879ffacc0a2986f7ada837dfd5cac6",
+    },
     zksync_testnet: {
       url: "https://zksync2-testnet.zksync.dev",
       ethNetwork: "goerli",
