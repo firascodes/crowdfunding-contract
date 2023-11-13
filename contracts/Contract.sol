@@ -1,4 +1,6 @@
-//Deployed at Goerli : 0xdD26f5eE4fAD887E1ADbB2D173e80B3fd6aCd17D 
+//Deployed at Goerli : 0xdD26f5eE4fAD887E1ADbB2D173e80B3fd6aCd17D
+
+//Since i called it using my dev acc, goerli tokens will accumulate there!
 
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
@@ -77,9 +79,11 @@ contract CrowdFunding {
     }
 
     function deleteCampaign(uint256 _id) public {
-    Campaign storage campaign = campaigns[_id];
-    require(msg.sender == campaign.owner, "Only the owner can delete the campaign");
-    campaign.deadline = block.timestamp - 1;
-}
-
+        Campaign storage campaign = campaigns[_id];
+        require(
+            msg.sender == campaign.owner,
+            "Only the owner can delete the campaign"
+        );
+        campaign.deadline = block.timestamp - 1;
+    }
 }
